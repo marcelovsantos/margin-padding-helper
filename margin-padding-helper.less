@@ -1,0 +1,40 @@
+@marginpadding: @padding-small-vertical; 
+.marginpadding(@prefix: ''; @value: 0;){
+    @rulem1: ~".m@{prefix}"; @{rulem1} { margin: @value  !important;}
+    @rulep1: ~".p@{prefix}"; @{rulep1} { padding: @value  !important;}
+
+    @rulem2: ~".m-t@{prefix}"; @{rulem2} { margin-top: @value  !important;}
+    @rulep2: ~".p-t@{prefix}"; @{rulep2} { padding-top: @value  !important;}
+
+    @rulem3: ~".m-b@{prefix}"; @{rulem3} { margin-bottom: @value  !important;}
+    @rulep3: ~".p-b@{prefix}"; @{rulep3} { padding-bottom: @value  !important;}
+
+    @rulem4: ~".m-l@{prefix}"; @{rulem4} { margin-left: @value  !important;}
+    @rulep4: ~".p-l@{prefix}"; @{rulep4} { padding-left: @value  !important;}
+
+    @rulem5: ~".m-r@{prefix}"; @{rulem5} { margin-right: @value  !important;}
+    @rulep5: ~".p-r@{prefix}"; @{rulep5} { padding-right: @value  !important;}
+
+    @rulem6: ~".m-v@{prefix}"; @{rulem6} { margin-top: @value  !important; margin-bottom: @value  !important;}
+    @rulep6: ~".p-v@{prefix}"; @{rulep6} { padding-top: @value  !important; padding-bottom: @value  !important;}
+
+    @rulem7: ~".m-h@{prefix}"; @{rulem7} { margin-left: @value  !important; margin-right: @value  !important;}
+    @rulep7: ~".p-h@{prefix}"; @{rulep7} { padding-left: @value  !important; padding-right: @value  !important;}
+}
+.marginpadding('-n', 0);
+.marginpadding('-xs', @marginpadding);
+.marginpadding('-xs-', -@marginpadding);
+.marginpadding('-sm', @marginpadding*2);
+.marginpadding('-sm-', -@marginpadding*2);
+.marginpadding('', @marginpadding*3);
+.marginpadding('-', -@marginpadding*3);
+.marginpadding('-lg', @marginpadding*6);
+.marginpadding('-lg-', -@marginpadding*6);
+.marginpadding('-xl', @marginpadding*10);
+.marginpadding('-xl-', -@marginpadding*10);
+.marginpadding('-xxl', @marginpadding*15);
+.marginpadding('-xxl-', -@marginpadding*15);
+.marginpadding('-xxxl', @marginpadding*20);
+.marginpadding('-xxxl-', -@marginpadding*20);
+.marginpadding('-xxxxl', @marginpadding*25);
+.marginpadding('-xxxxl-', -@marginpadding*25);
