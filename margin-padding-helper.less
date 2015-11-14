@@ -8,43 +8,57 @@
 @mpxxxl: @mpbase*20;
 @mpxxxxl: @mpbase*25;
 
-.mp(@prefix: ''; @value: 0;){
-    @rulem1: ~".m@{prefix}"; @{rulem1} { margin: @value  !important;}
-    @rulep1: ~".p@{prefix}"; @{rulep1} { padding: @value  !important;}
+.mp(@prefix: ''; @value: 0; @screen: '';){
+    @rulem1: ~".@{screen}m@{prefix}"; @{rulem1} { margin: @value  !important;}
+    @rulep1: ~".@{screen}p@{prefix}"; @{rulep1} { padding: @value  !important;}
 
-    @rulem2: ~".m-t@{prefix}"; @{rulem2} { margin-top: @value  !important;}
-    @rulep2: ~".p-t@{prefix}"; @{rulep2} { padding-top: @value  !important;}
+    @rulem2: ~".@{screen}m-t@{prefix}"; @{rulem2} { margin-top: @value  !important;}
+    @rulep2: ~".@{screen}p-t@{prefix}"; @{rulep2} { padding-top: @value  !important;}
 
-    @rulem3: ~".m-b@{prefix}"; @{rulem3} { margin-bottom: @value  !important;}
-    @rulep3: ~".p-b@{prefix}"; @{rulep3} { padding-bottom: @value  !important;}
+    @rulem3: ~".@{screen}m-b@{prefix}"; @{rulem3} { margin-bottom: @value  !important;}
+    @rulep3: ~".@{screen}p-b@{prefix}"; @{rulep3} { padding-bottom: @value  !important;}
 
-    @rulem4: ~".m-l@{prefix}"; @{rulem4} { margin-left: @value  !important;}
-    @rulep4: ~".p-l@{prefix}"; @{rulep4} { padding-left: @value  !important;}
+    @rulem4: ~".@{screen}m-l@{prefix}"; @{rulem4} { margin-left: @value  !important;}
+    @rulep4: ~".@{screen}p-l@{prefix}"; @{rulep4} { padding-left: @value  !important;}
 
-    @rulem5: ~".m-r@{prefix}"; @{rulem5} { margin-right: @value  !important;}
-    @rulep5: ~".p-r@{prefix}"; @{rulep5} { padding-right: @value  !important;}
+    @rulem5: ~".@{screen}m-r@{prefix}"; @{rulem5} { margin-right: @value  !important;}
+    @rulep5: ~".@{screen}p-r@{prefix}"; @{rulep5} { padding-right: @value  !important;}
 
-    @rulem6: ~".m-v@{prefix}"; @{rulem6} { margin-top: @value  !important; margin-bottom: @value  !important;}
-    @rulep6: ~".p-v@{prefix}"; @{rulep6} { padding-top: @value  !important; padding-bottom: @value  !important;}
+    @rulem6: ~".@{screen}m-v@{prefix}"; @{rulem6} { margin-top: @value  !important; margin-bottom: @value  !important;}
+    @rulep6: ~".@{screen}p-v@{prefix}"; @{rulep6} { padding-top: @value  !important; padding-bottom: @value  !important;}
 
-    @rulem7: ~".m-h@{prefix}"; @{rulem7} { margin-left: @value  !important; margin-right: @value  !important;}
-    @rulep7: ~".p-h@{prefix}"; @{rulep7} { padding-left: @value  !important; padding-right: @value  !important;}
+    @rulem7: ~".@{screen}m-h@{prefix}"; @{rulem7} { margin-left: @value  !important; margin-right: @value  !important;}
+    @rulep7: ~".@{screen}p-h@{prefix}"; @{rulep7} { padding-left: @value  !important; padding-right: @value  !important;}
 }
-
-.mp('-n', 0);
-.mp('-xs', @mpxs);
-.mp('-xs-', -@mpxs);
-.mp('-sm', @mpsm);
-.mp('-sm-', -@mpsm);
-.mp('', @mp);
-.mp('-', -@mp);
-.mp('-lg', @mplg);
-.mp('-lg-', -@mplg);
-.mp('-xl', @mpxl);
-.mp('-xl-', -@mpxl);
-.mp('-xxl', @mpxxl);
-.mp('-xxl-', -@mpxxl);
-.mp('-xxxl', @mpxxxl);
-.mp('-xxxl-', -@mpxxxl);
-.mp('-xxxxl', @mpxxxxl);
-.mp('-xxxxl-', -@mpxxxxl);
+.mprules(@screen: ''){
+    .mp('-n', 0, @screen);
+    .mp('-xs', @mpxs, @screen);
+    .mp('-xs-', -@mpxs, @screen);
+    .mp('-sm', @mpsm, @screen);
+    .mp('-sm-', -@mpsm, @screen);
+    .mp('', @mp, @screen);
+    .mp('-', -@mp, @screen);
+    .mp('-lg', @mplg, @screen);
+    .mp('-lg-', -@mplg, @screen);
+    .mp('-xl', @mpxl, @screen);
+    .mp('-xl-', -@mpxl, @screen);
+    .mp('-xxl', @mpxxl, @screen);
+    .mp('-xxl-', -@mpxxl, @screen);
+    .mp('-xxxl', @mpxxxl, @screen);
+    .mp('-xxxl-', -@mpxxxl, @screen);
+    .mp('-xxxxl', @mpxxxxl, @screen);
+    .mp('-xxxxl-', -@mpxxxxl, @screen);
+}
+.mprules();
+@media (max-width: 767px) { // @screen-xs-max
+    .mprules('xs-');
+}
+@media (min-width: 768px) { // @screen-sm-min
+    .mprules('sm-');
+}
+@media (min-width: 992px) { // @screen-md-min
+    .mprules('md-');
+}
+@media (min-width: 1200px) { // @screen-lg-min
+    .mprules('lg-');
+}
