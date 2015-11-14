@@ -1,5 +1,14 @@
-@marginpadding: 5px; 
-.marginpadding(@prefix: ''; @value: 0;){
+@mpbase: @padding-small-vertical; // 5px
+@mpxs: @mpbase;
+@mpsm: @mpbase*2;
+@mp: @mpbase*3;
+@mplg: @mpbase*6;
+@mpxl: @mpbase*10;
+@mpxxl: @mpbase*15;
+@mpxxxl: @mpbase*20;
+@mpxxxxl: @mpbase*25;
+
+.mp(@prefix: ''; @value: 0;){
     @rulem1: ~".m@{prefix}"; @{rulem1} { margin: @value  !important;}
     @rulep1: ~".p@{prefix}"; @{rulep1} { padding: @value  !important;}
 
@@ -21,20 +30,21 @@
     @rulem7: ~".m-h@{prefix}"; @{rulem7} { margin-left: @value  !important; margin-right: @value  !important;}
     @rulep7: ~".p-h@{prefix}"; @{rulep7} { padding-left: @value  !important; padding-right: @value  !important;}
 }
-.marginpadding('-n', 0);
-.marginpadding('-xs', @marginpadding);
-.marginpadding('-xs-', -@marginpadding);
-.marginpadding('-sm', @marginpadding*2);
-.marginpadding('-sm-', -@marginpadding*2);
-.marginpadding('', @marginpadding*3);
-.marginpadding('-', -@marginpadding*3);
-.marginpadding('-lg', @marginpadding*6);
-.marginpadding('-lg-', -@marginpadding*6);
-.marginpadding('-xl', @marginpadding*10);
-.marginpadding('-xl-', -@marginpadding*10);
-.marginpadding('-xxl', @marginpadding*15);
-.marginpadding('-xxl-', -@marginpadding*15);
-.marginpadding('-xxxl', @marginpadding*20);
-.marginpadding('-xxxl-', -@marginpadding*20);
-.marginpadding('-xxxxl', @marginpadding*25);
-.marginpadding('-xxxxl-', -@marginpadding*25);
+
+.mp('-n', 0);
+.mp('-xs', @mpxs);
+.mp('-xs-', -@mpxs);
+.mp('-sm', @mpsm);
+.mp('-sm-', -@mpsm);
+.mp('', @mp);
+.mp('-', -@mp);
+.mp('-lg', @mplg);
+.mp('-lg-', -@mplg);
+.mp('-xl', @mpxl);
+.mp('-xl-', -@mpxl);
+.mp('-xxl', @mpxxl);
+.mp('-xxl-', -@mpxxl);
+.mp('-xxxl', @mpxxxl);
+.mp('-xxxl-', -@mpxxxl);
+.mp('-xxxxl', @mpxxxxl);
+.mp('-xxxxl-', -@mpxxxxl);
