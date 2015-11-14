@@ -38,11 +38,20 @@ Simple class to increase/decrease margin/padding.
 .m-h // vertical (left, right)
 ```
 
+## Mutiples Screens
+```css
+.m // all screens
+.xs-m // only xs screen
+.sm-m // sm screen or greater
+.md-m // md screen or greater
+.lg-m // lg screen or greater
+```
+
 ## Combine all =)
 ```css
 .m // margin normal (top, left, right, bottom)
 .p-v-sm // padding vertical small (top, bottom)
-.m-h-n // margin horizontal none (0px left, 0px right)
+.xs-m-h-n // margin horizontal none (0px left, 0px right) in xs screen
 .p-t- // padding top negative
-.m-b-lg- // margin bottom large negative
+.sm-m-b-lg- // margin bottom large negative in sm screen
 ```
