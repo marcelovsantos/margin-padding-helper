@@ -1,0 +1,36 @@
+{
+  "name": "margin-padding-helper",
+  "version": "0.0.0",
+  "homepage": "https://github.com/marcelovsantos/margin-padding-helper",
+  "authors": [
+    "marcelovsantos <marcelovsantos@gmail.com>"
+  ],
+  "description": "Simple class to increase/decrease margin/padding.",
+  "main": "margin-padding-helper.css",
+  "moduleType": [
+    "amd",
+    "es6",
+    "globals",
+    "node",
+    "yui"
+  ],
+  "keywords": [
+    "css",
+    "margin",
+    "padding",
+    "bootstrap",
+    "increase",
+    "decrease",
+    "responsive",
+    "less",
+    "sass"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
